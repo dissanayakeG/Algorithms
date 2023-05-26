@@ -48,6 +48,9 @@ function hasPathDFS(graph, src, dst) {
   if (src === dst) return true;
 
   for (let neighbor of graph[src]) {
+    
+    console.log('src-->',src ,'--', graph[src]);
+
     if (hasPathDFS(graph, neighbor, dst) == true) {
       return true;
     }
