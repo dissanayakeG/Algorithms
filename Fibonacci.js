@@ -1,7 +1,7 @@
-console.log("memoization and tabulation->"+fibonacciMT(20));
-console.log("tabulation->"+fibonacciT(20));
-console.log("memoization->"+fibonacciM(20));
-console.log("normal->"+fibonacci(20));
+console.log("memoization and tabulation->" + fibonacciMT(20));
+console.log("tabulation->" + fibonacciT(20));
+console.log("memoization->" + fibonacciM(20));
+console.log("normal->" + fibonacci(20));
 
 
 
@@ -21,15 +21,15 @@ function fib(n) {
 }
 
 //finding sum of previous values upto n, when n is given
-function fibonacci(n){
-  if(n==0){
+function fibonacci(n) {
+  if (n == 0) {
     return 0;
   }
-  if(n==1){
+  if (n == 1) {
     return 1;
   }
 
-  return fibonacci(n-1) + fibonacci(n-2)
+  return fibonacci(n - 1) + fibonacci(n - 2)
   //if n=5 --> fibonacci(4)+fibonacci(3)
   //       -->[ fibonacci(3)+fibonacci(2) ] + [ fibonacci(2)+fibonacci(1) ]
   //       -->[ fibonacci(2)+fibonacci(1) ] + [ fibonacci(1)+fibonacci(0) ] + [ fibonacci(1)+fibonacci(0) ] + 1

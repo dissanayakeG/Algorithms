@@ -1,6 +1,12 @@
-// console.log("memoization and tabulation->"+pathsMT(20));
-// console.log("tabulation->"+pathsT(20));
-// console.log("memoization->"+pathsM(20));
+//player can move forward and downward only
+//grid size is (m,n)
+//m->number of rows
+//n->number of columns
+//when move 1 step down, playable area reduced to (m-1,n) 
+//when move 1 step forward, playable area reduced to (m,n-1) 
+//base case n==1 || m==1 return 1 as when has only one row or only one column there can be 1 path to destination
+//paths = path(m-1,n) + path(m,n-1)
+
 console.log("normal->" + paths(50, 50));
 
 function paths(m, n, memo = {}) {
