@@ -1,14 +1,13 @@
-const str = 'KISALKA'
+const str = 'hello hello'
 console.log('Reversed of' + str, '-->', reverse(str.split("")))
 
 function reverse(str) {
-    if (str.length ==0) return true;
-    let reversedString = [];
+    if (str.length == 0) return "";
+    let reversedString = "";
 
-    let lastCharacter = str.pop()
-    reversedString.push(lastCharacter)
     while (str.length > 0) {
-        reverse(str.splice(-1))
+        let lastCharacter = str.pop();
+        reversedString += lastCharacter;
     }
     return reversedString;
 }
