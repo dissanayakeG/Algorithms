@@ -79,8 +79,14 @@ function printLinkedListSum(head) {
     let sum = null;
 
     while (current !== null) {
-        sum += current.val + sum
+        sum = current.val + sum
         current = current.next
     }
     return sum
+}
+
+function printLinkedListSumR(head) {
+    let sum = null;
+    if (head == null) return sum;
+    return head.val + printLinkedListSumR(head.next)
 }
