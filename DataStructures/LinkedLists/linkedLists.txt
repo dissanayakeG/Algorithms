@@ -1,0 +1,20 @@
+Arrays
+=======
+must be stored contiguously in memory, thats mean all of your elements in an array are going to be stored like right next to each other in your computer's memory.
+son inserting an element middle of array won't replace that index, but shift all other element right
+
+time complexity in o(n)
+
+Linked Lists
+============
+
+it is not required that the nodes are contiguous in memory, so in order to inserting or removing a node from linked list doesn't require to shift other nodes.
+
+just need to reset and point previous node's next pointer to new pointer and, new node's next pointer to previous next node
+
+time complexity o(1)
+
+Note:
+    when passing a linked list to a function, we only need to pass head node's reference only(not address)
+
+    when current.next is null, that means that node is last of the linked list
