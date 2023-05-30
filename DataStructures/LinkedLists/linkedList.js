@@ -23,6 +23,7 @@ c.next = d;
 
 console.log('printLinkedList->', printLinkedList(a))
 console.log('printLinkedListR->', printLinkedListR(a))
+console.log('printLinkedListValues->', printLinkedListValues(a))
 
 
 function printLinkedList(head) {
@@ -37,4 +38,13 @@ function printLinkedListR(head) {
     if (head == null) return
     console.log(head.val)
     return printLinkedListR(head.next)
+}
+
+function printLinkedListValues(head){
+    let current = head;
+    let values = [];
+    while (current !== null) {
+        values.push(current.val)
+    }
+    return values
 }
