@@ -114,15 +114,23 @@ function listFindR(head, src) {
     return false
 }
 
-function listGetNodeValue(head, index) { 
+function listGetNodeValue(head, index) {
     let current = head;
-
-    while(head!==null){
-        if(index === 0) return current.val
+    while (current !== null) {
+        if (index === 0) return current.val
         index--
         current = current.next
     }
-    return current
+    return null
+
+    //OR
+    // let count = 0
+    // while (current !== null) {
+    //     if (count === index) return current.val
+    //     count++
+    //     current = current.next
+    // }
+    // return null
 }
 
 function listGetNodeValueR(head, index) {
@@ -130,4 +138,5 @@ function listGetNodeValueR(head, index) {
     if (index === 0) return head.val
     index--
     return listGetNodeValueR(head.next, index)
+    //OR return listGetNodeValueR(head.next, index-1) without index--
 }
