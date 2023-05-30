@@ -14,6 +14,15 @@ a.next = b;
 b.next = c;
 c.next = d;
 
+const p = new Node(5)
+const q = new Node(10)
+const r = new Node(15)
+const s = new Node(20)
+
+p.next = q;
+q.next = r;
+r.next = s;
+
 //A->B->C->D->NULL
 //curr
 //-->curr
@@ -25,6 +34,8 @@ console.log('printLinkedList->', printLinkedList(a))
 console.log('printLinkedListR->', printLinkedListR(a))
 console.log('printLinkedListValues->', printLinkedListValues(a))
 console.log('printLinkedListValuesR->', printLinkedListValuesR(a))
+console.log('printLinkedListSum->', printLinkedListSum(p))
+console.log('printLinkedListSumR->', printLinkedListSumR(p))
 
 
 function printLinkedList(head) {
@@ -60,5 +71,16 @@ function printLinkedListValuesR(head) {
 function fillValues(head, values) {
     if (head === null) return;
     values.push(head.val)
-    return fillValues(head.next,values)
+    return fillValues(head.next, values)
+}
+
+function printLinkedListSum(head) {
+    let current = head;
+    let sum = null;
+
+    while (current !== null) {
+        sum += current.val + sum
+        current = current.next
+    }
+    return sum
 }
