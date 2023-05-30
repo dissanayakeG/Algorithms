@@ -38,6 +38,8 @@ console.log('listSum->', listSum(p))
 console.log('listSumR->', listSumR(p))
 console.log('listFind->', listFind(a, 'A'))
 console.log('listFindR->', listFindR(a, 'A'))
+console.log('listGetNodeValue->', listGetNodeValue(a, 2))
+console.log('listGetNodeValueR->', listGetNodeValueR(a, 2))
 
 
 function printLinkedList(head) {
@@ -110,4 +112,22 @@ function listFindR(head, src) {
         return true
     }
     return false
+}
+
+function listGetNodeValue(head, index) { 
+    let current = head;
+
+    while(head!==null){
+        if(index === 0) return current.val
+        index--
+        current = current.next
+    }
+    return current
+}
+
+function listGetNodeValueR(head, index) {
+    if (head === null) return
+    if (index === 0) return head.val
+    index--
+    return listGetNodeValueR(head.next, index)
 }
