@@ -32,10 +32,12 @@ r.next = s;
 
 console.log('printLinkedList->', printLinkedList(a))
 console.log('printLinkedListR->', printLinkedListR(a))
-console.log('printLinkedListValues->', printLinkedListValues(a))
-console.log('printLinkedListValuesR->', printLinkedListValuesR(a))
-console.log('printLinkedListSum->', printLinkedListSum(p))
-console.log('printLinkedListSumR->', printLinkedListSumR(p))
+console.log('listValues->', listValues(a))
+console.log('listValuesR->', listValuesR(a))
+console.log('listSum->', listSum(p))
+console.log('listSumR->', listSumR(p))
+console.log('listFind->', listFind(a, 'A'))
+console.log('listFindR->', listFindR(a, 'A'))
 
 
 function printLinkedList(head) {
@@ -52,7 +54,7 @@ function printLinkedListR(head) {
     return printLinkedListR(head.next)
 }
 
-function printLinkedListValues(head) {
+function listValues(head) {
     let current = head;
     let values = [];
     while (current !== null) {
@@ -62,7 +64,7 @@ function printLinkedListValues(head) {
     return values
 }
 
-function printLinkedListValuesR(head) {
+function listValuesR(head) {
     let values = [];
     fillValues(head, values)
     return values;
@@ -74,7 +76,7 @@ function fillValues(head, values) {
     return fillValues(head.next, values)
 }
 
-function printLinkedListSum(head) {
+function listSum(head) {
     let current = head;
     let sum = null;
 
@@ -85,8 +87,27 @@ function printLinkedListSum(head) {
     return sum
 }
 
-function printLinkedListSumR(head) {
+function listSumR(head) {
     let sum = null;
     if (head == null) return sum;
-    return head.val + printLinkedListSumR(head.next)
+    return head.val + listSumR(head.next)
+}
+
+function listFind(head, src) {
+    let current = head;
+    while (current !== null) {
+        if (current.val === src) return true
+        current = current.next
+    }
+    return false
+}
+
+function listFindR(head, src) {
+    if (head === null) return false
+    if (head.val === src) return true
+    //return listFindR(head.next, src) //OR
+    if (listFindR(head.next, src) == true) {
+        return true
+    }
+    return false
 }
