@@ -40,6 +40,8 @@ console.log('listFind->', listFind(a, 'A'))
 console.log('listFindR->', listFindR(a, 'A'))
 console.log('listGetNodeValue->', listGetNodeValue(a, 2))
 console.log('listGetNodeValueR->', listGetNodeValueR(a, 2))
+console.log('listReverse->', listReverse(a))
+console.log('listReverseR->', listReverseR(a))
 
 
 function printLinkedList(head) {
@@ -139,4 +141,29 @@ function listGetNodeValueR(head, index) {
     index--
     return listGetNodeValueR(head.next, index)
     //OR return listGetNodeValueR(head.next, index-1) without index--
+}
+
+//A->B->C->D ==> D->C->B->A
+
+function listReverse(head) {
+    let current = head
+    let previous = null
+    while (current !== null) {
+        const existingNext = current.next
+        current.next = previous
+        previous = current
+        current = existingNext
+    }
+
+    while (previous != null) {
+        console.log(previous.val)
+        previous = previous.next
+    }
+}
+
+function listReverseR(head, previous = null) {
+    if (head === null) return previous
+    const existingNext = head.next
+    head.next = previous
+    return listReverseR(existingNext, head);
 }
