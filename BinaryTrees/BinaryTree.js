@@ -43,8 +43,8 @@ function dfsValues(root) {
 
 function dfsValuesR(root) {
     if (root === null) return [];
-    const left = dfsValuesR(root.left)
-    const right = dfsValuesR(root.right)
-    return [root, ...left, ...right];
+    const left = root.left
+    const right = root.right
+    return [root.val, ...dfsTreeR(left), ...dfsTreeR(right)]
 }
 
