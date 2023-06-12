@@ -26,7 +26,7 @@ c.right = f;
 // d   e   f
 
 console.log('DFS values', dfsValues(a))
-console.log('DFS values', dfsValuesR(a))
+console.log('DFS valuesR', dfsValuesR(a))
 
 function dfsValues(root) {
     if (root === null) return []; //empty tree
@@ -45,6 +45,32 @@ function dfsValuesR(root) {
     if (root === null) return [];
     const left = root.left
     const right = root.right
-    return [root.val, ...dfsTreeR(left), ...dfsTreeR(right)]
+    return [root.val, ...dfsValuesR(left), ...dfsValuesR(right)]
 }
 
+
+//BFS -> a,b,c,d,e,f
+//DFS -> a,b,d,e,c,f
+
+
+console.log('BFS values', bfsValues(a))
+console.log('BFS valuesR', bfsValuesR(a))
+
+function bfsValues(root) {
+    if (root === null) return [];
+
+    let queue = [root]
+    let result = [];
+
+    while (queue.length > 0) {
+        let current = queue.shift();
+        result.push(current.val)
+        if (current.left) queue.push(current.left)
+        if (current.right) queue.push(current.right)
+    }
+    return result
+}
+
+function bfsValuesR(root) {
+
+}
