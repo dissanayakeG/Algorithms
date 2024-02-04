@@ -78,3 +78,19 @@ function lengthOfLastWord(string, incrementCount = 0, charCount = 0) {
 let string = "You gotta jump over the wall!"
 
 console.log('lengthOfLastWord-', lengthOfLastWord(string));
+
+
+function reverseString(string, reversedString = '', decrementCount) {
+
+    if (decrementCount == 0) {
+        return reversedString;
+    }
+    reversedString = reversedString + "" + string.charAt(decrementCount-1)
+    decrementCount--
+
+    console.log(string, reversedString, decrementCount);
+    return reverseString(string, reversedString, decrementCount);
+}
+
+let str = 'Hello there!';
+console.log('reverseString-', reverseString(str, '', str.length))
