@@ -57,7 +57,7 @@ function toBinary(number, result = []) {
     return toBinary(Math.floor(number / 2), result);
 }
 
-console.log(toBinary(233));
+console.log('toBinary-',toBinary(233));
 
 function lengthOfLastWord(string, incrementCount = 0, charCount = 0) {
     if (string.length == incrementCount) {
@@ -67,8 +67,6 @@ function lengthOfLastWord(string, incrementCount = 0, charCount = 0) {
     if (string.charAt(incrementCount) == " ") {
         charCount = 0;
     } else {
-        console.log(incrementCount, charCount);
-
         charCount++;
     }
     incrementCount++
@@ -78,3 +76,30 @@ function lengthOfLastWord(string, incrementCount = 0, charCount = 0) {
 let string = "You gotta jump over the wall!"
 
 console.log('lengthOfLastWord-', lengthOfLastWord(string));
+
+
+function findMultiplications(n, incrementCount = 0, result = []) {
+
+    if (n == incrementCount) {
+        return result;
+    }
+
+    if (incrementCount > 2 && incrementCount % 3 == 0) {
+        result.push('fizz');
+    }
+
+    else if (incrementCount > 4 && incrementCount % 5 == 0) {
+        result.push("buzz")
+    }
+
+    else if (incrementCount > 2 && incrementCount % 3 == 0 && incrementCount % 5 == 0) {
+        result.push("fizzBuzz")
+    }
+    else {
+        result.push(incrementCount)
+    }
+    incrementCount++
+    return findMultiplications(n, incrementCount, result);
+}
+
+console.log('findMultiplications', findMultiplications(100))
