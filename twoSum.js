@@ -1,4 +1,4 @@
-let numbers = [2, 7, 9, 11, 15];
+let numbers = [1,2, 7, 9, 11, 15];
 let target = 9;
 
 function twoSum(numbers, target) {

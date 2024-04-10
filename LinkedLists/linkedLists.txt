@@ -1,7 +1,7 @@
 Arrays
 =======
 must be stored contiguously in memory, thats mean all of your elements in an array are going to be stored like right next to each other in your computer's memory.
-son inserting an element middle of array won't replace that index, but shift all other element right
+so inserting an element middle of array won't replace that index, but shift all other element right
 
 time complexity in o(n)
 
