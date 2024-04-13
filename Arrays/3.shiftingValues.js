@@ -1,5 +1,4 @@
 
-
 let numbers = [15, 12, 2, 19, 8, 1];
 console.log('sortedList-', shift(numbers, 1, 20))
 
