@@ -2,11 +2,12 @@
 print();
 
 function print() {
+    let n = 10;
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i <= n; i++) {
         console.log(getLine(i))
     }
-    for (let i = 10; i > 0; i--) {
+    for (let i = n; i >= 0; i--) {
         console.log(getLine(i))
     }
 }
