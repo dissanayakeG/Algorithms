@@ -1,35 +1,30 @@
 
-let numbers = [15, 12, 2, 19, 8, 1];
-console.log('sortedList-', shift(numbers))
+let numbers = [15, 12, 0, 0, 1, 55, 2, 19, 8, 1];
+console.log('sortedList-', sort(numbers))
 
-function shift(numbers) {
+//insertion
+function sort(array) {
 
-    for (let i = 0; i < numbers.length - 1; i++) {
-        console.log('outer loop-', numbers)
+    for (let i = 1; i < array.length; i++) {
 
-        let swapped = false;
+        let insertIndex = i;
+        let insertValue = array[insertIndex];
 
-        for (let j = 0; j < numbers.length - i - 1; j++) {
+        for (let j = i - 1; j >= insertIndex-1; j--) {
 
-            if (numbers[j] > numbers[j + 1]) {
+            if (insertValue < array[j]) {
 
-                [numbers[j], numbers[j + 1]] = [numbers[j + 1], numbers[j]]
-
-                swapped = true
-
+                array[j + 1] = array[j]
+                insertIndex = j;
 
             }
 
-            sleep(1000)
-            console.log(numbers)
         }
-
-        if (!swapped) break
-
+        array[insertIndex] = insertValue
     }
-    return numbers
-
+    return array
 }
+
 
 function sleep(delay) {
     var start = new Date().getTime();
