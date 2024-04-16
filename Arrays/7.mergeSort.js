@@ -2,7 +2,7 @@
 //Tutorial: https://www.youtube.com/watch?v=JSceec-wEyw&pp=ygUSbWVyZ2Ugc29ydCBleHBsYWlu
 
 // let numbers = [15, 12, 33, 21, 9, 2, 7, 1, 99];
-let numbers = [3, 2, 4, 6, 5, 9];
+let numbers = [33,66, 2, 4, 6, 5, 9];
 
 console.log('sortedList-', sort(numbers))
 
