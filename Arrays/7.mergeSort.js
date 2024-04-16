@@ -2,7 +2,7 @@
 //Tutorial: https://www.youtube.com/watch?v=JSceec-wEyw&pp=ygUSbWVyZ2Ugc29ydCBleHBsYWlu
 
 // let numbers = [15, 12, 33, 21, 9, 2, 7, 1, 99];
-let numbers = [3, 2, 4, 6, 5, 9, 2];
+let numbers = [3, 2, 4, 6, 5, 9];
 
 console.log('sortedList-', sort(numbers))
 
@@ -51,6 +51,9 @@ function merge(left, right) {
             j++
         }
     }
+
+    console.log('i,j', i, j, left[i], right[j], '\n')
+
     temp = temp.concat(left.slice(i))
     temp = temp.concat(right.slice(j))
 
