@@ -42,6 +42,7 @@ function merge(left, right) {
     let i = 0; j = 0;
 
     while (i < left.length && j < right.length) {
+        console.log('i,j', i, j, '-', left[i], right[j])
 
         if (left[i] < right[j]) {
             temp.push(left[i])
@@ -52,7 +53,6 @@ function merge(left, right) {
         }
     }
 
-    console.log('i,j', i, j, left[i], right[j], '\n')
 
     temp = temp.concat(left.slice(i))
     temp = temp.concat(right.slice(j))
