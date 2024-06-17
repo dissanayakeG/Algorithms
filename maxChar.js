@@ -9,10 +9,9 @@ function maxChar() {
 
     for (char of str.trim()) {
 
-        if (char in obj) {
-            obj[char]++;
+        if (!obj[char]) {
+            obj[char] = 1;
         } else {
-            obj[char] = 0;
             obj[char]++;
         }
 
