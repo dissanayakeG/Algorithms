@@ -1,6 +1,6 @@
 
 let array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-let size = 2;
+let size =0;
 
 arrayChuck(array, size);
 
