@@ -22,5 +22,9 @@ function arrayChuck(array, size) {
             tempArray = [];
         }
     }
+
+    if (size > array.length) {
+        mainArray.push(tempArray)
+    }
     console.log(mainArray);
 }
