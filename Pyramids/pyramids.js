@@ -9,6 +9,9 @@ console.log('\n');
 upSideDownPyramid(numOfRows);
 console.log('\n');
 
+leftToRightPyramid(numOfRows);
+console.log('\n');
+
 function fullPyramid(numOfRows) {
 
     for (let row = 1; row <= numOfRows; row++) {
@@ -62,4 +65,24 @@ function upSideDownPyramid(numOfRows) {
         console.log(line)
     }
 
+}
+
+
+function leftToRightPyramid(numOfRows) {
+
+    let numOfCols = (numOfRows + 1) / 2;
+    for (let row = 1; row <= numOfRows; row++) {
+
+        let line = '';
+
+        for (let col = 1; col <= numOfCols; col++) {
+
+            if ((row - col >= 0) && (row + col <= numOfRows + 1)) {
+                line = line + '*';
+            } else {
+                line = line + ' ';
+            }
+        }
+        console.log(line);
+    }
 }
