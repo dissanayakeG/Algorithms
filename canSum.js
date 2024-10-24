@@ -23,9 +23,9 @@ function canSum(n, arr = []) {
   return status;
 };
 
-console.log("canSum2->" + canSum2(72, [5, 4, 6, 36, 9]));
+console.log("canSum2->" + canSumR(72, [5, 4, 6, 36, 9]));
 
-function canSum2(n, arr=[]) {
+function canSumR(n, arr = []) {
 
   if (n == 0) return true;
   if (n < 0) return false;
@@ -33,7 +33,7 @@ function canSum2(n, arr=[]) {
   for (let num of arr) {
     const rem = n - num
 
-    if(canSum2(rem, arr) == true){
+    if (canSumR(rem, arr) == true) {
       return true
     }
   }

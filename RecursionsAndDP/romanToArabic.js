@@ -30,7 +30,6 @@ let map = {
     c: 100,
     d: 500,
     m: 1000
-
 }
 
 function getArabicValue(val) {
