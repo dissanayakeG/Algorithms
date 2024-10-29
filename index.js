@@ -30,3 +30,18 @@ function sleep(delay) {
     var start = new Date().getTime();
     while (new Date().getTime() < start + delay);
 }
+
+fib(5, 'from init');
+
+function fib(n, from) {
+
+    
+    if (n <= 1) {
+        console.log('return',n, from,'\n');
+        return n;
+    }
+    console.log(n, from);
+    sleep(3000);
+
+    return fib(n - 1, 'from n-1') + fib(n - 2,'from n-2')
+}
