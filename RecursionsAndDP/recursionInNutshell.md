@@ -3,9 +3,7 @@
 ### memory management and stack frames:
 
 references::
-
--   https://www.installsetupconfig.com/win32programming/processtoolhelpapis12_1.html
--   https://www.geeksforgeeks.org/stack-frame-in-computer-organization/
+-   https://www.youtube.com/watch?v=Q2sFmqvpBe0&ab_channel=ComputerScienceLessons
 -   https://stackoverflow.com/questions/10057443/explain-the-concept-of-a-stack-frame-in-a-nutshell
 
 ### Stack vs. Heap
