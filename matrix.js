@@ -35,7 +35,9 @@ function printPositiveDiagonals(matrix) {
         let j = 0; // k always in the 1st column
         let diagonal = []
 
-        while (i >= 0) {// when the diagonal reach the 1st row, it is the last row, then negative rows
+        while (i >= 0 && j < numOfCols) {
+            // when the diagonal reach the 1st row, it is the last row, then negative rows
+            // ensure both row and column indices are in bounds
             diagonal.push(matrix[i][j])
             i = i - 1; //decrement the rows
             j = j + 1; //increment the columns
@@ -51,7 +53,7 @@ function printPositiveDiagonals(matrix) {
         let j = rowStart; //as k changes, column number also change j=col
         let diagonal = [];
 
-        while (j <= numOfCols - 1) { //border is last column
+        while (i >= 0 && j < numOfCols) { // ensure both row and column indices are in bounds
             diagonal.push(matrix[i][j])
             i = i - 1;
             j = j + 1
