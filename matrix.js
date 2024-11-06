@@ -23,7 +23,7 @@ let matrix = [
 //STEPS to solve this
 //1.we need to loop through the 1st column
 //2.we need to loop through the last row (need to ignore 1st column as it covers from 1st loop)
-printDiagonals(matrix);
+// printDiagonals(matrix);
 
 function printDiagonals(matrix) {
     let numOfRows = matrix.length
@@ -55,6 +55,32 @@ function printDiagonals(matrix) {
             row.push(matrix[i][j])
             i = i - 1;
             j = j + 1
+        }
+        console.log(row)
+    }
+}
+
+let matrix2 = [
+    ['a', 'b', 'c'], //c
+    ['d', 'e', 'f'], //f,b
+    ['g', 'h', 'i']  //i,e,a
+];
+
+printNegativeDiagonals(matrix2);
+
+function printNegativeDiagonals(matrix){
+    let numOfRows = matrix.length;
+    let numOfCols = matrix[0].length
+
+    for(let k = numOfRows-1; k >= 0; k--){
+        let i = k;
+        let j = numOfCols-1 //diagonals start from last column
+        let row = [];
+
+        while(i>=0){
+            row.push(matrix[i][j])
+            i--
+            j--
         }
         console.log(row)
     }
